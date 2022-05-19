@@ -35,6 +35,32 @@ class Restaurant {
   }
 
   factory Restaurant.fromJson(Map<String, dynamic> restaurant) {
+      final fakerFoodKeyword= [
+          'food',
+          'dish',
+          'cuisine',
+          'burger',
+          'fish',
+          'potatoes',
+          'brunch',
+          'lunch',
+          'dinner',
+          'meat',
+          'beverages',
+          'beer',
+          'wine',
+          'eegs',
+          'sausages',
+          'brocoli',
+          'coffee',
+          'tea',
+          'soda',
+          'takeout',
+          'water',
+          'coke',
+          'juice',
+      ];
+
       return Restaurant(
           id: restaurant['id'],
           name: restaurant['name'],
@@ -47,8 +73,27 @@ class Restaurant {
               country: faker.address.country(),
           ),
           menus: Menu(
-              foods: (restaurant['menus']['foods'] as List<dynamic>).map((food) => Item( name: food['name'], price: (10000 + Random().nextInt(50000 - 10000)).toString(),)).toList(),
-              drinks: (restaurant['menus']['drinks'] as List<dynamic>).map((drink) => Item( name: drink['name'], price: (10000 + Random().nextInt(50000 - 10000)).toString(),)).toList(),
+              foods: (restaurant['menus']['foods'] as List<dynamic>).map((food) => Item( 
+                      name: food['name'],
+                      price: (10000 + Random().nextInt(50000 - 10000)).toString(),
+                      image: faker.image.image(
+                          width: 1200,
+                          height: 600,
+                          keywords: fakerFoodKeyword,
+                          random: true,
+                      )
+              )).toList(),
+              drinks: (restaurant['menus']['drinks'] as List<dynamic>).map((drink) => Item( 
+                      name: drink['name'],
+                      price: (10000 + Random().nextInt(50000 - 10000)).toString(),
+                      image: faker.image.image(
+                          width: 1200,
+                          height: 600,
+                          keywords: fakerFoodKeyword,
+                          random: true,
+                      )
+
+              )).toList(),
           )
       );
   }

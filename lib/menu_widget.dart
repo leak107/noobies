@@ -24,11 +24,7 @@ class MenuWidget extends StatelessWidget {
       child: Column(
         children: [
           Image.network(
-          faker.image.image(
-          width: 1200,
-          height: 600,
-          keywords: ['restaurant', 'place', 'building', 'store'],
-          random: true),
+            '${menu.image}',
             width: 300,
             height: 100,
             fit: BoxFit.cover,
@@ -36,10 +32,16 @@ class MenuWidget extends StatelessWidget {
           ListTile(
             title: Text('${menu.name}',
                 style: TextStyle(
+                  fontSize: 12,
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
                 )),
-            subtitle: Text(menuPrice.format(int.parse(menu.price))),
+            subtitle: Text(
+                menuPrice.format(int.parse(menu.price)),
+                style: TextStyle(
+                    fontSize: 10,
+                ),
+            ),
           ),
         ],
       ),
