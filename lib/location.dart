@@ -9,5 +9,3 @@ class Location {
     required this.country,
   });
 }
-
-

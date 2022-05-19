@@ -4,7 +4,6 @@ import 'package:noobies/menu.dart';
 import 'package:noobies/item.dart';
 import 'package:faker/faker.dart';
 
-
 class MenuWidget extends StatelessWidget {
   final Item menu;
 
@@ -37,10 +36,10 @@ class MenuWidget extends StatelessWidget {
                   color: Colors.black,
                 )),
             subtitle: Text(
-                menuPrice.format(int.parse(menu.price)),
-                style: TextStyle(
-                    fontSize: 10,
-                ),
+              menuPrice.format(int.parse(menu.price)),
+              style: TextStyle(
+                fontSize: 10,
+              ),
             ),
           ),
         ],

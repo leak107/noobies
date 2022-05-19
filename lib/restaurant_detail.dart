@@ -89,29 +89,27 @@ class DetailScreen extends StatelessWidget {
     );
 
     Widget foodSection = Container(
-        width: 640,
-        height: 640,
-        child: GridView.builder(
-            itemCount: restaurant.menus.foods.length,
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-            ),
-            itemBuilder: (context, index) => MenuWidget(
-                menu: restaurant.menus.foods[index])
-            ),
-        );
+      width: 640,
+      height: 640,
+      child: GridView.builder(
+          itemCount: restaurant.menus.foods.length,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+          ),
+          itemBuilder: (context, index) =>
+              MenuWidget(menu: restaurant.menus.foods[index])),
+    );
 
     Widget drinkSection = Container(
-        width: 640,
-        height: 640,
-        child: GridView.builder(
-            itemCount: restaurant.menus.foods.length,
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-            ),
-            itemBuilder: (context, index) => MenuWidget(
-                menu: restaurant.menus.drinks[index])
-            ),
+      width: 640,
+      height: 640,
+      child: GridView.builder(
+          itemCount: restaurant.menus.foods.length,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+          ),
+          itemBuilder: (context, index) =>
+              MenuWidget(menu: restaurant.menus.drinks[index])),
     );
 
     return Scaffold(
@@ -133,4 +131,3 @@ class DetailScreen extends StatelessWidget {
         ]));
   }
 }
-
